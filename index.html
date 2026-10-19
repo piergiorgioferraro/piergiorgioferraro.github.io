@@ -1,1151 +1,423 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piergiorgio Ferraro - Curriculum Vitae | Theoretical Physicist</title>
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        physics: {
-                            50: '#f0f7ff',
-                            100: '#e0effe',
-                            500: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#0f172a',
-                            950: '#090d16',
-                        },
-                        quantum: {
-                            500: '#8b5cf6',
-                            600: '#7c3aed',
-                            700: '#6d28d9',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                        serif: ['Georgia', 'Cambria', 'Times New Roman', 'serif'],
-                        mono: ['JetBrains Mono', 'Fira Code', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome Icons CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- KaTeX CDN for LaTeX rendering -->
+    <title>Piergiorgio Ferraro - Curriculum Vitae</title>
+    <!-- Lightweight KaTeX for crisp math symbol rendering -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body);"></script>
 
     <style>
-        /* Custom styling & print optimizations */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-        }
-        .dark .glass-panel {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(12px);
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --muted-color: #555555;
+            --border-color: #222222;
+            --light-border: #e0e0e0;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --font-serif: "Georgia", "Times New Roman", serif;
         }
 
-        /* Print styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.5;
+            font-size: 15px;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1.2rem;
+        }
+
+        header h1 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.2rem;
+        }
+
+        header .subtitle {
+            font-size: 1.05rem;
+            color: var(--muted-color);
+            margin-bottom: 0.8rem;
+        }
+
+        header .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: var(--muted-color);
+        }
+
+        header .contact-info a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        header .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 1.8rem;
+        }
+
+        h2 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 4px;
+            margin-bottom: 1rem;
+        }
+
+        /* Experience & Education Items */
+        .item {
+            margin-bottom: 1.2rem;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1.02rem;
+        }
+
+        .item-date {
+            font-size: 0.88rem;
+            color: var(--muted-color);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .item-sub {
+            display: flex;
+            justify-content: space-between;
+            font-style: italic;
+            color: var(--muted-color);
+            font-size: 0.92rem;
+            margin-bottom: 6px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 4px;
+            font-size: 0.93rem;
+            color: #2d2d2d;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            row-gap: 8px;
+            font-size: 0.93rem;
+        }
+
+        .skills-label {
+            font-weight: 600;
+        }
+
+        /* References */
+        .references-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .ref-card {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .ref-name {
+            font-weight: 600;
+        }
+
+        /* Print Settings */
         @media print {
             body {
-                background: white !important;
-                color: #111827 !important;
-                font-size: 11pt;
+                padding: 0;
+                font-size: 13px;
             }
-            .no-print, nav, #canvas-container, button, .filter-btn, #search-input-container {
-                display: none !important;
+            .container {
+                max-width: 100%;
             }
-            .print-full-width {
-                width: 100% !important;
-                max-width: 100% !important;
-                margin: 0 !important;
-                padding: 0 !important;
+            section {
+                margin-bottom: 1.2rem;
             }
-            .page-break-inside-avoid {
-                break-inside: avoid;
+            header {
+                margin-bottom: 1.2rem;
             }
-            a {
-                text-decoration: none !important;
-                color: #111827 !important;
+        }
+
+        @media (max-width: 600px) {
+            .item-header, .item-sub {
+                flex-direction: column;
             }
-            .shadow-lg, .shadow-md, .shadow-sm {
-                box-shadow: none !important;
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
-            .border {
-                border-color: #e5e7eb !important;
-            }
-            .bg-slate-900, .bg-slate-800, .bg-slate-950 {
-                background-color: white !important;
-                color: #111827 !important;
-            }
-            .text-slate-100, .text-slate-200, .text-slate-300, .text-blue-400 {
-                color: #111827 !important;
-            }
-            .text-slate-400, .text-slate-500 {
-                color: #4b5563 !important;
+            .references-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-200 transition-colors duration-300 font-sans leading-relaxed selection:bg-blue-500 selection:text-white">
+<body>
 
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 px-4 py-3 rounded-xl shadow-2xl flex items-center space-x-3 pointer-events-none">
-        <i id="toast-icon" class="fas fa-check-circle text-emerald-400 dark:text-emerald-600 text-lg"></i>
-        <span id="toast-message" class="text-sm font-medium">Notification message</span>
-    </div>
+<div class="container">
 
-    <!-- Navigation Bar -->
-    <header class="sticky top-0 z-40 w-full glass-panel border-b border-slate-200 dark:border-slate-800/80 transition-all no-print">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <!-- Brand / Logo -->
-                <a href="#profile" class="flex items-center space-x-3 group">
-                    <div class="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold font-mono text-lg shadow-md group-hover:bg-blue-700 transition">
-                        PF
-                    </div>
-                    <div>
-                        <span class="font-bold text-slate-900 dark:text-slate-100 text-base tracking-tight block">Piergiorgio Ferraro</span>
-                        <span class="text-xs text-blue-600 dark:text-blue-400 font-mono block">Theoretical Physics</span>
-                    </div>
-                </a>
-
-                <!-- Desktop Nav Links -->
-                <nav class="hidden md:flex items-center space-x-1 text-sm font-medium">
-                    <a href="#profile" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Profile</a>
-                    <a href="#research" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Research</a>
-                    <a href="#publications" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Publications</a>
-                    <a href="#education" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Education</a>
-                    <a href="#awards" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Awards</a>
-                    <a href="#skills" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Skills</a>
-                    <a href="#references" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">References</a>
-                </nav>
-
-                <!-- Actions: Theme Toggle & PDF Print -->
-                <div class="flex items-center space-x-2">
-                    <button id="theme-toggle" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                        <i id="theme-toggle-dark-icon" class="fas fa-moon hidden"></i>
-                        <i id="theme-toggle-light-icon" class="fas fa-sun text-amber-400"></i>
-                    </button>
-                    
-                    <button onclick="window.print()" class="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-3 py-2 rounded-lg shadow transition">
-                        <i class="fas fa-print"></i>
-                        <span class="hidden sm:inline">Print / Save PDF</span>
-                    </button>
-                </div>
-            </div>
+    <!-- HEADER -->
+    <header>
+        <h1>Piergiorgio Ferraro</h1>
+        <div class="subtitle">Theoretical Physicist & Quantum Information Researcher</div>
+        <div class="contact-info">
+            <span>Email: <a href="mailto:piergiorgio.ferraro@gmail.com">piergiorgio.ferraro@gmail.com</a></span>
+            <span>•</span>
+            <span>Date of Birth: 16 March 2001</span>
         </div>
     </header>
 
-    <!-- Main Container -->
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12 print-full-width">
+    <!-- PROFILE -->
+    <section>
+        <h2>Profile</h2>
+        <p>Early-career theoretical physicist with an MSc in Physics of Complex Systems (Quantum Information track, $110/110$ cum laude) and research experience in quantum dynamics, quantum walks, open quantum systems, and computational modelling. I combine analytical methods with Python numerical simulations to study many-body and lattice-based quantum systems. Experienced across international research stays with two first-author research papers.</p>
+    </section>
 
-        <!-- Hero / Profile Section -->
-        <section id="profile" class="relative rounded-2xl bg-gradient-to-br from-slate-900 via-physics-900 to-slate-900 text-white p-6 sm:p-10 shadow-xl overflow-hidden border border-slate-800">
-            <!-- Quantum Lattice Canvas Backdrop Simulation -->
-            <div id="canvas-container" class="absolute inset-0 opacity-25 pointer-events-none no-print">
-                <canvas id="quantum-canvas" class="w-full h-full"></canvas>
+    <!-- EDUCATION -->
+    <section>
+        <h2>Education</h2>
+        
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Master's Degree in Physics of Complex Systems</span>
+                <span class="item-date">2023 – 2025</span>
             </div>
-
-            <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                <div class="md:col-span-2 space-y-4">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-mono">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span>MSc Physics of Complex Systems (110/110 Cum Laude)</span>
-                    </div>
-
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight font-serif text-white">
-                        Piergiorgio Ferraro
-                    </h1>
-
-                    <p class="text-base sm:text-lg text-slate-300 font-light max-w-2xl leading-relaxed">
-                        Early-career theoretical physicist specializing in <strong>Quantum Information</strong>, <strong>Quantum Walks</strong>, open quantum systems, and Fock-state lattice dynamics. Combining analytical frameworks with Python numerical modeling.
-                    </p>
-
-                    <!-- Contact & Meta Links -->
-                    <div class="flex flex-wrap gap-4 pt-2 text-xs sm:text-sm text-slate-300">
-                        <a href="mailto:piergiorgio.ferraro@gmail.com" class="inline-flex items-center space-x-2 hover:text-blue-300 transition group">
-                            <div class="w-7 h-7 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <span>piergiorgio.ferraro@gmail.com</span>
-                        </a>
-
-                        <div class="inline-flex items-center space-x-2">
-                            <div class="w-7 h-7 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-blue-400">
-                                <i class="fas fa-calendar-alt"></i>
-                            </div>
-                            <span>16 March 2001</span>
-                        </div>
-
-                        <div class="inline-flex items-center space-x-2">
-                            <div class="w-7 h-7 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-blue-400">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <span>Turin / Paris / Crete / Stockholm</span>
-                        </div>
-                    </div>
-
-                    <!-- Actions -->
-                    <div class="pt-4 flex flex-wrap gap-3 no-print">
-                        <button onclick="copyToClipboard('piergiorgio.ferraro@gmail.com', 'Email copied to clipboard!')" class="inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-medium transition">
-                            <i class="fas fa-copy text-blue-400"></i>
-                            <span>Copy Email</span>
-                        </button>
-                        <a href="#publications" class="inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow transition">
-                            <i class="fas fa-book-open"></i>
-                            <span>View Publications (2)</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Highlights Card -->
-                <div class="bg-slate-800/80 backdrop-blur-md rounded-xl p-5 border border-slate-700/70 space-y-4">
-                    <h2 class="text-xs font-mono tracking-wider text-slate-400 uppercase font-semibold">Research Metrics & Affiliations</h2>
-                    
-                    <div class="space-y-3 text-sm">
-                        <div class="flex justify-between items-center pb-2 border-b border-slate-700/50">
-                            <span class="text-slate-400">Publications</span>
-                            <span class="font-bold font-mono text-emerald-400">2 First-Author</span>
-                        </div>
-                        <div class="flex justify-between items-center pb-2 border-b border-slate-700/50">
-                            <span class="text-slate-400">Key Journal</span>
-                            <span class="font-bold text-blue-300">Phys. Rev. A (2026)</span>
-                        </div>
-                        <div class="flex justify-between items-center pb-2 border-b border-slate-700/50">
-                            <span class="text-slate-400">Excellence Institution</span>
-                            <span class="font-semibold text-slate-200">SSST Turin & ENS Paris</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-slate-400">Master's Grade</span>
-                            <span class="font-mono text-amber-300 font-bold">$110/110$ cum laude</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="item-sub">
+                <span>University of Turin — Quantum Computation & Information Track</span>
+                <span>Grade: 110/110 cum Laude</span>
             </div>
-        </section>
+            <ul>
+                <li><strong>Thesis:</strong> Generalized quantum walks.</li>
+                <li><strong>Coursework:</strong> Quantum Computation, Quantum Information (stabilizer formalism, fault tolerance), Quantum Field Theory, Stochastic Processes, Dynamical Systems, Statistical Mechanics, Data Mining, Numerical Algorithms.</li>
+            </ul>
+        </div>
 
-        <!-- Search & Quick Filter Bar -->
-        <section id="search-input-container" class="no-print">
-            <div class="relative max-w-xl mx-auto">
-                <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
-                <input type="text" id="cv-search" onkeyup="filterCV()" placeholder="Search terms (e.g. QuTiP, Jaynes-Cummings, ENS, Stockholm, Lindblad, Awards)..." class="w-full pl-11 pr-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm transition">
-                <button onclick="clearSearch()" id="clear-search-btn" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
-                    <i class="fas fa-times-circle text-base"></i>
-                </button>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Scuola di Studi Superiori "Ferdinando Rossi" (SSST)</span>
+                <span class="item-date">2020 – Present</span>
             </div>
-        </section>
-
-        <!-- Summary / Overview Section -->
-        <section class="bg-white dark:bg-slate-900 rounded-xl p-6 sm:p-8 shadow-sm border border-slate-200 dark:border-slate-800 space-y-4 page-break-inside-avoid">
-            <div class="flex items-center space-x-3 text-blue-600 dark:text-blue-400">
-                <i class="fas fa-user-astronaut text-xl"></i>
-                <h2 class="text-xl font-bold font-serif text-slate-900 dark:text-slate-100">Profile Summary</h2>
+            <div class="item-sub">
+                <span>University of Turin</span>
+                <span>Second-Level Master's Diploma Equivalent</span>
             </div>
-            <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-                Early-career theoretical physicist with an MSc in Physics of Complex Systems (Quantum Information track, $110/110$ cum laude) and extensive research experience in quantum dynamics, quantum walks, open quantum systems, and computational modelling. I combine analytical mathematical methods with numerical simulation in Python (including QuTiP) to investigate many-body and lattice-based quantum systems. Experienced in international research environments across France, Greece, Sweden, and Italy, with two first-author research articles including one published in <em>Physical Review A</em>.
-            </p>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-                <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 text-center">
-                    <span class="block text-xs text-slate-500 dark:text-slate-400 font-mono">Specialization</span>
-                    <span class="font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200">Quantum Information</span>
-                </div>
-                <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 text-center">
-                    <span class="block text-xs text-slate-500 dark:text-slate-400 font-mono">Methodology</span>
-                    <span class="font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200">Analytical & QuTiP</span>
-                </div>
-                <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 text-center">
-                    <span class="block text-xs text-slate-500 dark:text-slate-400 font-mono">Focus Area</span>
-                    <span class="font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200">Fock-State Lattices</span>
-                </div>
-                <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 text-center">
-                    <span class="block text-xs text-slate-500 dark:text-slate-400 font-mono">Mobility</span>
-                    <span class="font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200">Paris / Crete / Stockholm</span>
-                </div>
+            <ul>
+                <li>Institution of excellence for higher education. Advanced courses in Game & Network Theory, Evolutionism, Mathematical Models in Natural Sciences, and Complex Systems.</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Bachelor's Degree in Physics</span>
+                <span class="item-date">2020 – 2023</span>
             </div>
-        </section>
-
-        <!-- Publications & Preprints Section -->
-        <section id="publications" class="space-y-6">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3 text-blue-600 dark:text-blue-400">
-                    <i class="fas fa-file-invoice text-xl"></i>
-                    <h2 class="text-2xl font-bold font-serif text-slate-900 dark:text-slate-100">Publications & Presentations</h2>
-                </div>
-                <span class="text-xs font-mono bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full font-semibold">2 First-Author Works</span>
+            <div class="item-sub">
+                <span>University of Turin</span>
+                <span>Grade: 109/110</span>
             </div>
+            <ul>
+                <li><strong>Thesis:</strong> Entanglement and Bell's Inequalities in $t\bar{t}$ Production at LHC.</li>
+                <li><strong>Coursework:</strong> Quantum Mechanics I & II (Path Integrals, scattering, entanglement), Geometry II (differential geometry, topology), Analytical Mechanics.</li>
+            </ul>
+        </div>
+    </section>
 
-            <div class="space-y-4">
-                <!-- Publication 1 -->
-                <div class="searchable-card bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800 relative hover:border-blue-500/50 transition page-break-inside-avoid">
-                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800">
-                            <i class="fas fa-check-circle mr-1.5"></i> Physical Review A (Published)
-                        </span>
-                        <span class="text-xs font-mono text-slate-400">2026</span>
-                    </div>
-                    <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 leading-snug">
-                        Algebraic structure of Fock-state lattices
-                    </h3>
-                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 font-mono">
-                        <strong>Ferraro, P.</strong>, Naves, C. B., & Larson, J. (2026). <em>Physical Review A</em>, 114(2), 022214.
-                    </p>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-3 leading-relaxed">
-                        Explores the underlying symmetry and algebraic properties governing synthetic Fock-state lattices in quantum optical and many-body systems.
-                    </p>
-                    
-                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap gap-2 no-print">
-                        <button onclick="copyCitation('Ferraro, P., Naves, C. B., & Larson, J. (2026). Algebraic structure of Fock-state lattices. Physical Review A, 114(2), 022214.')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-900/30 text-xs font-medium transition inline-flex items-center space-x-1.5">
-                            <i class="fas fa-quote-left text-blue-500"></i>
-                            <span>Copy APA Citation</span>
-                        </button>
-                        <button onclick="showBibtexModal('pub1')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-900/30 text-xs font-medium transition inline-flex items-center space-x-1.5">
-                            <i class="fas fa-code text-purple-500"></i>
-                            <span>BibTeX</span>
-                        </button>
-                    </div>
-                </div>
+    <!-- RESEARCH EXPERIENCE -->
+    <section>
+        <h2>Research Experience</h2>
 
-                <!-- Publication 2 (Preprint) -->
-                <div class="searchable-card bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800 relative hover:border-blue-500/50 transition page-break-inside-avoid">
-                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border border-amber-300 dark:border-amber-800">
-                            <i class="fas fa-hourglass-half mr-1.5"></i> Preprint (Under Peer Review)
-                        </span>
-                        <span class="text-xs font-mono text-slate-400">2026</span>
-                    </div>
-                    <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 leading-snug">
-                        Discrete-time quantum walks in synthetic dimensions
-                    </h3>
-                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 font-mono">
-                        <strong>Ferraro, P.</strong>, Naves, C. B., & Larson, J. (2026). <em>arXiv preprint</em> arXiv:2604.09357. Submitted to Physical Review A.
-                    </p>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-3 leading-relaxed">
-                        Formulates discrete-time quantum walk dynamics extended to synthetic Hilbert space dimensions and Fock-state structures.
-                    </p>
-
-                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap gap-2 no-print">
-                        <button onclick="copyCitation('Ferraro, P., Naves, C. B., & Larson, J. (2026). Discrete-time quantum walks in synthetic dimensions. arXiv preprint arXiv:2604.09357.')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-900/30 text-xs font-medium transition inline-flex items-center space-x-1.5">
-                            <i class="fas fa-quote-left text-blue-500"></i>
-                            <span>Copy APA Citation</span>
-                        </button>
-                        <button onclick="showBibtexModal('pub2')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-900/30 text-xs font-medium transition inline-flex items-center space-x-1.5">
-                            <i class="fas fa-code text-purple-500"></i>
-                            <span>BibTeX</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Invited Presentation -->
-                <div class="searchable-card bg-slate-50 dark:bg-slate-900/60 rounded-xl p-5 border border-slate-200 dark:border-slate-800 flex items-start space-x-4">
-                    <div class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-300 flex items-center justify-center shrink-0 mt-1">
-                        <i class="fas fa-microphone-alt"></i>
-                    </div>
-                    <div>
-                        <span class="text-xs font-mono uppercase tracking-wider text-purple-600 dark:text-purple-400 font-bold">Invited Seminar Presentation</span>
-                        <h4 class="text-sm font-bold text-slate-900 dark:text-slate-100 mt-0.5">
-                            Generalized quantum walks: randomness and Fock-state lattices
-                        </h4>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">
-                            Presented at <strong>Technical University of Crete</strong> (April 21, 2026). Hosted by Prof. Demosthenes Ellinas.
-                        </p>
-                    </div>
-                </div>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Research Traineeship</span>
+                <span class="item-date">2026</span>
             </div>
-        </section>
-
-        <!-- Research Experience & Contributions Section -->
-        <section id="research" class="space-y-6">
-            <div class="flex items-center space-x-3 text-blue-600 dark:text-blue-400">
-                <i class="fas fa-flask text-xl"></i>
-                <h2 class="text-2xl font-bold font-serif text-slate-900 dark:text-slate-100">Research Experience & Traineeships</h2>
+            <div class="item-sub">
+                <span>École Normale Supérieure (ENS), Paris</span>
+                <span>Supervisor: Prof. Xiangyu Cao</span>
             </div>
+            <ul>
+                <li>Studied the quantum-to-classical transition by investigating the emergence of decoherent histories and Quantum Darwinism in inflationary systems.</li>
+            </ul>
+        </div>
 
-            <div class="relative border-l-2 border-slate-200 dark:border-slate-800 ml-3 sm:ml-6 space-y-8 pl-6 sm:pl-8">
-                
-                <!-- Research 1: ENS Paris -->
-                <div class="searchable-card relative page-break-inside-avoid">
-                    <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-slate-50 dark:ring-slate-950"></span>
-                    <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
-                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100">
-                                    Research Trainee
-                                </h3>
-                                <p class="text-xs sm:text-sm font-semibold text-blue-600 dark:text-blue-400">
-                                    École Normale Supérieure (ENS), Paris, France
-                                </p>
-                            </div>
-                            <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-                                2026
-                            </span>
-                        </div>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-3 font-mono">
-                            Supervisor: Prof. Xiangyu Cao
-                        </p>
-                        <div class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-2 leading-relaxed">
-                            <p><strong>Project:</strong> Study of the quantum-to-classical transition via the investigation of the emergence of decoherent histories and Quantum Darwinism in an inflationary system.</p>
-                            <ul class="list-disc list-inside space-y-1 text-slate-500 dark:text-slate-400 pl-1">
-                                <li>Investigated quantum decoherence mechanisms and mathematical signatures of information flow.</li>
-                                <li>Analyzed environment-assisted state selection and redundant encoding of quantum information.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Research 2: Technical University of Crete -->
-                <div class="searchable-card relative page-break-inside-avoid">
-                    <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-slate-50 dark:ring-slate-950"></span>
-                    <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
-                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100">
-                                    Research Trainee
-                                </h3>
-                                <p class="text-xs sm:text-sm font-semibold text-blue-600 dark:text-blue-400">
-                                    Technical University of Crete, Greece
-                                </p>
-                            </div>
-                            <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-                                2026
-                            </span>
-                        </div>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-3 font-mono">
-                            Supervisor: Prof. Demosthenes Ellinas
-                        </p>
-                        <div class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-2 leading-relaxed">
-                            <p><strong>Project:</strong> Study of Fock-state lattice dynamics via indefinite causal order channels.</p>
-                            <ul class="list-disc list-inside space-y-1 text-slate-500 dark:text-slate-400 pl-1">
-                                <li>Explored quantum superpositions of temporal order in quantum optical lattice evolutions.</li>
-                                <li>Awarded the Erasmus Traineeship Scholarship for this research project.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Research 3: Stockholm University MSc Thesis -->
-                <div class="searchable-card relative page-break-inside-avoid">
-                    <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-slate-50 dark:ring-slate-950"></span>
-                    <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
-                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100">
-                                    Master's Thesis Research Project
-                                </h3>
-                                <p class="text-xs sm:text-sm font-semibold text-blue-600 dark:text-blue-400">
-                                    Stockholm University, Sweden & University of Turin, Italy
-                                </p>
-                            </div>
-                            <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-                                2025
-                            </span>
-                        </div>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-3 font-mono">
-                            Supervisors: Prof. Jonas Larson (Stockholm University), Prof. Alberto Carlini (Univ. of Turin)
-                        </p>
-                        <div class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-3 leading-relaxed">
-                            <p><strong>Project:</strong> Study of quantum walks on 1D lattices (standard 1D lattice and synthetic Fock-state 1D lattice) under various evolution dynamics.</p>
-                            
-                            <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-lg space-y-2 border border-slate-200/60 dark:border-slate-800">
-                                <h4 class="font-semibold text-xs text-slate-800 dark:text-slate-200 uppercase font-mono tracking-wider">Key Contributions & Technical Achievements:</h4>
-                                <ul class="list-disc list-inside space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
-                                    <li>Developed analytical and numerical models of generalized quantum walks on 1D lattices as simulation tools for many-body quantum systems.</li>
-                                    <li>Defined discrete-time quantum walks on 1D Fock-state lattices emerging from a two-mode detuned Jaynes-Cummings interaction.</li>
-                                    <li>Constructed a time-parameterized theoretical framework connecting discrete-time and continuous-time quantum walks.</li>
-                                    <li>Analyzed stochastic quantum-walk dynamics as open quantum systems, deriving effective Lindblad master equations $\dot{\rho} = -i[H,\rho] + \mathcal{L}(\rho)$ and quantifying decoherence, entanglement generation, and quantum transport via Python QuTiP simulations.</li>
-                                </ul>
-                            </div>
-                            <p class="text-xs text-emerald-600 dark:text-emerald-400 font-medium">
-                                <i class="fas fa-file-check mr-1"></i> Resulted in two first-author research papers (one in <em>Phys. Rev. A</em>, one submitted to PRA).
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Research 4: Bachelor Thesis CERN LHC -->
-                <div class="searchable-card relative page-break-inside-avoid">
-                    <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-400 ring-4 ring-slate-50 dark:ring-slate-950"></span>
-                    <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
-                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100">
-                                    Bachelor's Thesis Research
-                                </h3>
-                                <p class="text-xs sm:text-sm font-semibold text-blue-600 dark:text-blue-400">
-                                    University of Turin, Italy
-                                </p>
-                            </div>
-                            <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-                                2023
-                            </span>
-                        </div>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-3 font-mono">
-                            Supervisor: Prof. Sandro Uccirati
-                        </p>
-                        <div class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-2 leading-relaxed">
-                            <p><strong>Project:</strong> Entanglement and Bell's Inequalities in top-antitop ($t\bar{t}$) production at CERN's Large Hadron Collider (LHC).</p>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">
-                                Characterized experimental observables of quantum entanglement and Bell inequality violations in high-energy $t\bar{t}$ pair production, mapping quantum information principles onto collider physics observables.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Research Traineeship</span>
+                <span class="item-date">2026</span>
             </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="space-y-6">
-            <div class="flex items-center space-x-3 text-blue-600 dark:text-blue-400">
-                <i class="fas fa-graduation-cap text-xl"></i>
-                <h2 class="text-2xl font-bold font-serif text-slate-900 dark:text-slate-100">Education</h2>
+            <div class="item-sub">
+                <span>Technical University of Crete</span>
+                <span>Supervisor: Prof. Demosthenes Ellinas</span>
             </div>
+            <ul>
+                <li>Investigated Fock-state lattice dynamics governed by indefinite causal order quantum channels.</li>
+            </ul>
+        </div>
 
-            <div class="grid grid-cols-1 gap-6">
-                
-                <!-- Master Degree -->
-                <div class="searchable-card bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800 space-y-3 page-break-inside-avoid">
-                    <div class="flex flex-wrap justify-between items-start gap-2">
-                        <div>
-                            <span class="text-xs font-mono font-semibold px-2.5 py-0.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300">
-                                Master's Degree
-                            </span>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mt-1">
-                                Physics of Complex Systems &mdash; Quantum Computation & Information Track
-                            </h3>
-                            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-                                University of Turin & Stockholm University
-                            </p>
-                        </div>
-                        <div class="text-right">
-                            <span class="text-sm font-bold text-emerald-600 dark:text-emerald-400 font-mono block">110/110 Cum Laude</span>
-                            <span class="text-xs font-mono text-slate-400">Graduated 2025</span>
-                        </div>
-                    </div>
-
-                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                        <strong>Thesis:</strong> <em>Generalized quantum walks</em>
-                    </p>
-
-                    <div class="pt-2">
-                        <span class="text-xs font-mono text-slate-500 dark:text-slate-400 block mb-2 font-semibold">Relevant Master's Coursework:</span>
-                        <div class="flex flex-wrap gap-1.5 text-xs">
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Intro to Quantum Computation</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Quantum Information & Stabilizers</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Quantum Error Correction</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Fault-Tolerant QC</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Quantum Field Theory</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Stochastic Processes</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Dynamical Systems</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Statistical Mechanics</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Data Mining</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Numerical Algorithms for Physics</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SSST Turin -->
-                <div class="searchable-card bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800 space-y-3 page-break-inside-avoid">
-                    <div class="flex flex-wrap justify-between items-start gap-2">
-                        <div>
-                            <span class="text-xs font-mono font-semibold px-2.5 py-0.5 rounded bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-300">
-                                Post-Graduate Level Honors Certificate
-                            </span>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mt-1">
-                                Scuola di Studi Superiori "Ferdinando Rossi" (SSST)
-                            </h3>
-                            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-                                University of Turin, Italy
-                            </p>
-                        </div>
-                        <span class="text-xs font-mono text-slate-400">2020 &ndash; Present</span>
-                    </div>
-
-                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-                        Selective institution of excellence for higher university studies, equivalent to a second-level master's degree certificate.
-                    </p>
-
-                    <div class="pt-1">
-                        <span class="text-xs font-mono text-slate-500 dark:text-slate-400 block mb-2 font-semibold">Advanced Interdisciplinary Courses:</span>
-                        <div class="flex flex-wrap gap-1.5 text-xs">
-                            <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Elements of Game & Network Theory</span>
-                            <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Evolutionism</span>
-                            <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Mathematical Models in Natural Sciences</span>
-                            <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Complex Systems</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bachelor Degree -->
-                <div class="searchable-card bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800 space-y-3 page-break-inside-avoid">
-                    <div class="flex flex-wrap justify-between items-start gap-2">
-                        <div>
-                            <span class="text-xs font-mono font-semibold px-2.5 py-0.5 rounded bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300">
-                                Bachelor's Degree
-                            </span>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mt-1">
-                                Bachelor's Degree in Physics
-                            </h3>
-                            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-                                University of Turin, Italy
-                            </p>
-                        </div>
-                        <div class="text-right">
-                            <span class="text-sm font-bold text-slate-800 dark:text-slate-200 font-mono block">109/110</span>
-                            <span class="text-xs font-mono text-slate-400">2020 &ndash; 2023</span>
-                        </div>
-                    </div>
-
-                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                        <strong>Thesis:</strong> <em>Entanglement and Bell's Inequalities in $t\bar{t}$ Production at LHC</em>
-                    </p>
-
-                    <div class="pt-1">
-                        <span class="text-xs font-mono text-slate-500 dark:text-slate-400 block mb-2 font-semibold">Core Coursework:</span>
-                        <div class="flex flex-wrap gap-1.5 text-xs">
-                            <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Quantum Mechanics I & II</span>
-                            <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Path Integral Formalism</span>
-                            <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Scattering & Entanglement</span>
-                            <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Geometry II (Topology & Differential Geometry)</span>
-                            <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Lagrangian & Hamiltonian Mechanics</span>
-                        </div>
-                    </div>
-                </div>
-
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Master's Thesis Project</span>
+                <span class="item-date">2025</span>
             </div>
-        </section>
-
-        <!-- Awards and Recognitions Section -->
-        <section id="awards" class="space-y-6">
-            <div class="flex items-center space-x-3 text-blue-600 dark:text-blue-400">
-                <i class="fas fa-award text-xl"></i>
-                <h2 class="text-2xl font-bold font-serif text-slate-900 dark:text-slate-100">Awards & Grants</h2>
+            <div class="item-sub">
+                <span>Stockholm University & University of Turin</span>
+                <span>Supervisors: Prof. Jonas Larson, Prof. Alberto Carlini</span>
             </div>
+            <ul>
+                <li>Developed analytical and numerical models of generalized quantum walks on standard 1D and Fock-state lattices (FSL).</li>
+                <li>Introduced discrete-time quantum walks on 1D Fock-state lattices emerging from a two-mode detuned Jaynes-Cummings model.</li>
+                <li>Established a time-parameterized framework connecting discrete- and continuous-time quantum dynamics.</li>
+                <li>Derived effective Lindblad equations to evaluate decoherence, entanglement generation, and transport via QuTiP.</li>
+            </ul>
+        </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                
-                <!-- Award 1 -->
-                <div class="searchable-card bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-200 dark:border-slate-800 flex items-start space-x-4 page-break-inside-avoid">
-                    <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400 flex items-center justify-center shrink-0 mt-1">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div>
-                        <span class="text-xs font-mono text-slate-400">2025</span>
-                        <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100">Erasmus Traineeship Scholarship</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Awarded for research stay at Technical University of Crete, Greece.</p>
-                    </div>
-                </div>
-
-                <!-- Award 2 -->
-                <div class="searchable-card bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-200 dark:border-slate-800 flex items-start space-x-4 page-break-inside-avoid">
-                    <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400 flex items-center justify-center shrink-0 mt-1">
-                        <i class="fas fa-globe-europe"></i>
-                    </div>
-                    <div>
-                        <span class="text-xs font-mono text-slate-400">2025</span>
-                        <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100">SSST &ndash; ENS Mobility Grant</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">International mobility scholarship for research stay at École Normale Supérieure (ENS), Paris.</p>
-                    </div>
-                </div>
-
-                <!-- Award 3 -->
-                <div class="searchable-card bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-200 dark:border-slate-800 flex items-start space-x-4 page-break-inside-avoid">
-                    <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400 flex items-center justify-center shrink-0 mt-1">
-                        <i class="fas fa-plane-departure"></i>
-                    </div>
-                    <div>
-                        <span class="text-xs font-mono text-slate-400">2025</span>
-                        <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100">Stockholm Mobility Scholarship</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">SSST scholarship for research stay and Master's thesis work at Stockholm University.</p>
-                    </div>
-                </div>
-
-                <!-- Award 4 -->
-                <div class="searchable-card bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-200 dark:border-slate-800 flex items-start space-x-4 page-break-inside-avoid">
-                    <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400 flex items-center justify-center shrink-0 mt-1">
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <div>
-                        <span class="text-xs font-mono text-slate-400">2020</span>
-                        <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100">1st Rank Admission Exam &ndash; SSM Naples</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Ranked 1st place in national entrance exams for Scuola Superiore Meridionale of Naples; passed entrance exams for Catania & SSST Turin.</p>
-                    </div>
-                </div>
-
-                <!-- Award 5 -->
-                <div class="searchable-card bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-200 dark:border-slate-800 flex items-start space-x-4 page-break-inside-avoid">
-                    <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400 flex items-center justify-center shrink-0 mt-1">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <div>
-                        <span class="text-xs font-mono text-slate-400">2024</span>
-                        <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100">USA East Coast Ivy League Delegation</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Selected winner of study travel program visiting USA Ivy League Universities, organized by Higher Education Institutes.</p>
-                    </div>
-                </div>
-
-                <!-- Award 6 -->
-                <div class="searchable-card bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-200 dark:border-slate-800 flex items-start space-x-4 page-break-inside-avoid">
-                    <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400 flex items-center justify-center shrink-0 mt-1">
-                        <i class="fas fa-square-root-variable"></i>
-                    </div>
-                    <div>
-                        <span class="text-xs font-mono text-slate-400">2017 &ndash; 2020</span>
-                        <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100">Physics, Math & Statistics Olympiads</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Multiple winner of local phase, second-level regional phase in Italian Physics (Olifis) and Math Olympiads; finalist at National Phase of Italian Statistics Olympiads.</p>
-                    </div>
-                </div>
-
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Bachelor's Thesis Project</span>
+                <span class="item-date">2023</span>
             </div>
-        </section>
-
-        <!-- Skills & Competencies Section -->
-        <section id="skills" class="space-y-6">
-            <div class="flex items-center space-x-3 text-blue-600 dark:text-blue-400">
-                <i class="fas fa-laptop-code text-xl"></i>
-                <h2 class="text-2xl font-bold font-serif text-slate-900 dark:text-slate-100">Skills & Competencies</h2>
+            <div class="item-sub">
+                <span>University of Turin</span>
+                <span>Supervisor: Prof. Sandro Uccirati</span>
             </div>
+            <ul>
+                <li>Characterized experimental observables for entanglement and Bell inequality violations in top-antitop quark pair production at CERN's LHC.</li>
+            </ul>
+        </div>
+    </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <!-- Programming & Tools -->
-                <div class="searchable-card bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800 space-y-4 page-break-inside-avoid">
-                    <div class="flex items-center space-x-2 text-slate-900 dark:text-slate-100 font-bold text-sm">
-                        <i class="fas fa-code text-blue-500"></i>
-                        <h3>Computational & Coding</h3>
-                    </div>
-                    <div class="space-y-3 text-xs">
-                        <div>
-                            <div class="flex justify-between text-slate-700 dark:text-slate-300 font-medium mb-1">
-                                <span>Python (QuTiP, SciPy, NumPy)</span>
-                                <span class="font-mono text-blue-500">Advanced</span>
-                            </div>
-                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-                                <div class="bg-blue-600 h-2 rounded-full w-[95%]"></div>
-                            </div>
-                        </div>
+    <!-- PUBLICATIONS & PRESENTATIONS -->
+    <section>
+        <h2>Publications & Presentations</h2>
+        
+        <div class="item">
+            <div class="item-title" style="font-size: 0.95rem;">Journal Publications</div>
+            <ul>
+                <li><strong>Ferraro, P.</strong>, Naves, C. B., & Larson, J. (2026). <em>Algebraic structure of Fock-state lattices</em>. Physical Review A, 114(2), 022214.</li>
+            </ul>
+        </div>
 
-                        <div>
-                            <div class="flex justify-between text-slate-700 dark:text-slate-300 font-medium mb-1">
-                                <span>LaTeX ($\text{\LaTeX}$)</span>
-                                <span class="font-mono text-blue-500">Expert</span>
-                            </div>
-                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-                                <div class="bg-blue-600 h-2 rounded-full w-[95%]"></div>
-                            </div>
-                        </div>
+        <div class="item">
+            <div class="item-title" style="font-size: 0.95rem;">Preprints</div>
+            <ul>
+                <li><strong>Ferraro, P.</strong>, Naves, C. B., & Larson, J. (2026). <em>Discrete-time quantum walks in synthetic dimensions</em>. arXiv:2604.09357.</li>
+            </ul>
+        </div>
 
-                        <div>
-                            <div class="flex justify-between text-slate-700 dark:text-slate-300 font-medium mb-1">
-                                <span>C++</span>
-                                <span class="font-mono text-slate-400">Competent</span>
-                            </div>
-                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-                                <div class="bg-blue-600 h-2 rounded-full w-[75%]"></div>
-                            </div>
-                        </div>
+        <div class="item">
+            <div class="item-title" style="font-size: 0.95rem;">Invited Talks</div>
+            <ul>
+                <li><em>Generalized quantum walks: randomness and Fock-state lattices</em>, Technical University of Crete (April 21, 2026).</li>
+            </ul>
+        </div>
+    </section>
 
-                        <div class="pt-2 text-slate-500 dark:text-slate-400">
-                            <strong>Operating Systems:</strong> macOS, Linux, Windows<br>
-                            <strong>Software:</strong> MS PowerPoint, Excel, Word
-                        </div>
-                    </div>
-                </div>
+    <!-- AWARDS -->
+    <section>
+        <h2>Awards & Grants</h2>
+        <ul>
+            <li><strong>Erasmus Traineeship Scholarship</strong> — Internship at Technical University of Crete (2025)</li>
+            <li><strong>SSST – ENS Mobility Grant</strong> — Research stay at École Normale Supérieure, Paris (2025)</li>
+            <li><strong>SSST International Mobility Scholarship</strong> — Research project at Stockholm University (2025)</li>
+            <li><strong>Erasmus+ Mobility Scholarships</strong> — University of Valencia (2023) & Stockholm University (2025)</li>
+            <li><strong>Excellence Institutions Admission</strong> — Ranked 1st at Scuola Superiore Meridionale (Naples); admitted to SSST (Turin) and Scuola Superiore di Catania (2020)</li>
+            <li><strong>US East Coast Ivy League Visit Grant</strong> — Network of Higher Education Institutions (2024)</li>
+            <li><strong>Physics & Math Olympiads</strong> — Winner of regional phases; national finalist in Italian Statistics Olympiad (2017–2020)</li>
+        </ul>
+    </section>
 
-                <!-- Languages -->
-                <div class="searchable-card bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800 space-y-4 page-break-inside-avoid">
-                    <div class="flex items-center space-x-2 text-slate-900 dark:text-slate-100 font-bold text-sm">
-                        <i class="fas fa-language text-purple-500"></i>
-                        <h3>Languages</h3>
-                    </div>
-                    <div class="space-y-3 text-xs">
-                        <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 space-y-1">
-                            <div class="flex justify-between font-bold text-slate-800 dark:text-slate-200">
-                                <span>English</span>
-                                <span class="text-blue-600 dark:text-blue-400 font-mono">C1 Advanced</span>
-                            </div>
-                            <p class="text-slate-500 dark:text-slate-400">Cambridge ESOL Advanced Certificate</p>
-                        </div>
+    <!-- SKILLS -->
+    <section>
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skills-label">Languages</div>
+            <div>English (C1 Cambridge Advanced), French (Beginner), Italian (Native)</div>
 
-                        <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 space-y-1">
-                            <div class="flex justify-between font-bold text-slate-800 dark:text-slate-200">
-                                <span>French</span>
-                                <span class="text-slate-400 font-mono">Beginner</span>
-                            </div>
-                            <p class="text-slate-500 dark:text-slate-400">Basic conversational skills</p>
-                        </div>
+            <div class="skills-label">Coding</div>
+            <div>Python (QuTiP, NumPy, SciPy, Pandas, Matplotlib), C++, LaTeX</div>
 
-                        <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 space-y-1">
-                            <div class="flex justify-between font-bold text-slate-800 dark:text-slate-200">
-                                <span>Italian</span>
-                                <span class="text-emerald-600 dark:text-emerald-400 font-mono">Native</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="skills-label">Environments</div>
+            <div>macOS, Linux, Windows</div>
+        </div>
+    </section>
 
-                <!-- Soft Skills & Leadership -->
-                <div class="searchable-card bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800 space-y-4 page-break-inside-avoid">
-                    <div class="flex items-center space-x-2 text-slate-900 dark:text-slate-100 font-bold text-sm">
-                        <i class="fas fa-users text-emerald-500"></i>
-                        <h3>Leadership & Civic Engagement</h3>
-                    </div>
-                    <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
-                        <li class="flex items-start space-x-2">
-                            <i class="fas fa-check text-blue-500 mt-0.5 shrink-0"></i>
-                            <span>Coordinated research laboratory groups during Bachelor's degree studies.</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <i class="fas fa-check text-blue-500 mt-0.5 shrink-0"></i>
-                            <span>Former deputy head of "Libera" association in Modica promoting legality & civic engagement.</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <i class="fas fa-check text-blue-500 mt-0.5 shrink-0"></i>
-                            <span>Managed organizational tasks for "Rete degli Studenti Medi" presidium in Modica.</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <i class="fas fa-check text-blue-500 mt-0.5 shrink-0"></i>
-                            <span>Volunteer Math & Physics tutor at "Crisci Ranni" educational center for underprivileged children.</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <i class="fas fa-check text-blue-500 mt-0.5 shrink-0"></i>
-                            <span>Chaired meetings of local book club "Sortirne Insieme".</span>
-                        </li>
-                    </ul>
-                </div>
+    <!-- LEADERSHIP & ACTIVITIES -->
+    <section>
+        <h2>Leadership & Activities</h2>
+        <ul>
+            <li>Coordinated undergraduate laboratory research teams during Bachelor's studies.</li>
+            <li>Managed administrative tasks for high school student representation in Modica; served as deputy head for civic engagement association "Libera".</li>
+            <li>Volunteered as Math and Physics tutor for middle/high school students at "Crisci Ranni" educational center.</li>
+        </ul>
+    </section>
 
+    <!-- REFERENCES -->
+    <section>
+        <h2>References</h2>
+        <div class="references-grid">
+            <div class="ref-card">
+                <div class="ref-name">Prof. Jonas Larson</div>
+                <div>Department of Physics</div>
+                <div>Stockholm University</div>
+                <div><a href="mailto:jonas.larson@fysik.su.se">jonas.larson@fysik.su.se</a></div>
             </div>
-        </section>
-
-        <!-- Academic References Section -->
-        <section id="references" class="space-y-6 page-break-inside-avoid">
-            <div class="flex items-center space-x-3 text-blue-600 dark:text-blue-400">
-                <i class="fas fa-user-check text-xl"></i>
-                <h2 class="text-2xl font-bold font-serif text-slate-900 dark:text-slate-100">Academic References</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
-                <!-- Ref 1 -->
-                <div class="searchable-card bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800 space-y-3">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 flex items-center justify-center font-bold text-lg font-serif">
-                            JL
-                        </div>
-                        <div>
-                            <h3 class="text-base font-bold text-slate-900 dark:text-slate-100">Prof. Jonas Larson</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">Department of Physics, Stockholm University</p>
-                        </div>
-                    </div>
-                    <div class="text-xs text-slate-600 dark:text-slate-400 space-y-1 pt-2 border-t border-slate-100 dark:border-slate-800">
-                        <p><i class="fas fa-map-pin mr-2 text-slate-400"></i>Roslagstullsbacken 21, Stockholm, Sweden</p>
-                        <p class="font-mono"><i class="fas fa-envelope mr-2 text-slate-400"></i>jonas.larson@fysik.su.se</p>
-                    </div>
-                    <div class="pt-2 no-print">
-                        <button onclick="copyToClipboard('jonas.larson@fysik.su.se', 'Prof. Larson email copied!')" class="w-full py-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-blue-50 dark:hover:bg-blue-900/30 text-xs font-semibold text-slate-700 dark:text-slate-300 transition inline-flex items-center justify-center space-x-2">
-                            <i class="fas fa-copy text-blue-500"></i>
-                            <span>Copy Reference Email</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Ref 2 -->
-                <div class="searchable-card bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800 space-y-3">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-12 h-12 rounded-full bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300 flex items-center justify-center font-bold text-lg font-serif">
-                            AC
-                        </div>
-                        <div>
-                            <h3 class="text-base font-bold text-slate-900 dark:text-slate-100">Prof. Alberto Carlini</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">Department of Physics, University of Turin</p>
-                        </div>
-                    </div>
-                    <div class="text-xs text-slate-600 dark:text-slate-400 space-y-1 pt-2 border-t border-slate-100 dark:border-slate-800">
-                        <p><i class="fas fa-map-pin mr-2 text-slate-400"></i>Via Pietro Giuria 1, 10125, Torino, Italy</p>
-                        <p class="font-mono"><i class="fas fa-envelope mr-2 text-slate-400"></i>alberto.carlini@gmail.com</p>
-                    </div>
-                    <div class="pt-2 no-print">
-                        <button onclick="copyToClipboard('alberto.carlini@gmail.com', 'Prof. Carlini email copied!')" class="w-full py-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-purple-50 dark:hover:bg-purple-900/30 text-xs font-semibold text-slate-700 dark:text-slate-300 transition inline-flex items-center justify-center space-x-2">
-                            <i class="fas fa-copy text-purple-500"></i>
-                            <span>Copy Reference Email</span>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="pt-8 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-400 space-y-2 no-print">
-            <p>&copy; 2026 Piergiorgio Ferraro &bull; Theoretical Physics & Quantum Information CV</p>
-            <p>Designed with clean academic responsive typography and KaTeX physics rendering.</p>
-        </footer>
-
-    </main>
-
-    <!-- Modal for BibTeX -->
-    <div id="bibtex-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-sm hidden no-print">
-        <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4 m-4">
-            <div class="flex justify-between items-center pb-2 border-b border-slate-200 dark:border-slate-800">
-                <h3 class="font-bold text-slate-900 dark:text-slate-100 font-mono text-sm">BibTeX Citation Entry</h3>
-                <button onclick="closeBibtexModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <textarea id="bibtex-code" readonly class="w-full h-44 p-3 rounded-lg bg-slate-900 text-emerald-400 font-mono text-xs focus:outline-none border border-slate-800 leading-relaxed"></textarea>
-            <div class="flex justify-end space-x-3">
-                <button onclick="closeBibtexModal()" class="px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold">Close</button>
-                <button onclick="copyBibtexFromModal()" class="px-4 py-2 rounded-lg bg-blue-600 text-white text-xs font-semibold hover:bg-blue-700">Copy BibTeX</button>
+            <div class="ref-card">
+                <div class="ref-name">Prof. Alberto Carlini</div>
+                <div>Department of Physics</div>
+                <div>University of Turin</div>
+                <div><a href="mailto:alberto.carlini@gmail.com">alberto.carlini@gmail.com</a></div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Scripts -->
-    <script>
-        // BibTeX Data
-        const bibtexEntries = {
-            pub1: `@article{ferraro2026algebraic,
-  title={Algebraic structure of Fock-state lattices},
-  author={Ferraro, Piergiorgio and Naves, Caio B. and Larson, Jonas},
-  journal={Physical Review A},
-  volume={114},
-  number={2},
-  pages={022214},
-  year={2026},
-  publisher={American Physical Society}
-}`,
-            pub2: `@article{ferraro2026discrete,
-  title={Discrete-time quantum walks in synthetic dimensions},
-  author={Ferraro, Piergiorgio and Naves, Caio B. and Larson, Jonas},
-  journal={arXiv preprint arXiv:2604.09357},
-  year={2026}
-}`
-        };
+</div>
 
-        // Dark Mode Logic
-        function initTheme() {
-            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.classList.add('dark');
-                document.getElementById('theme-toggle-dark-icon').classList.add('hidden');
-                document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
-            } else {
-                document.documentElement.classList.remove('dark');
-                document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
-                document.getElementById('theme-toggle-light-icon').classList.add('hidden');
-            }
-        }
-
-        function toggleDarkMode() {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-                document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
-                document.getElementById('theme-toggle-light-icon').classList.add('hidden');
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-                document.getElementById('theme-toggle-dark-icon').classList.add('hidden');
-                document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
-            }
-        }
-
-        // Toast notifications
-        function showToast(message, isError = false) {
-            const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toast-message');
-            const toastIcon = document.getElementById('toast-icon');
-
-            toastMsg.innerText = message;
-            if (isError) {
-                toastIcon.className = "fas fa-exclamation-circle text-rose-400 text-lg";
-            } else {
-                toastIcon.className = "fas fa-check-circle text-emerald-400 text-lg";
-            }
-
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
-
-            setTimeout(() => {
-                toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 3000);
-        }
-
-        // Copy Text using execCommand fallback for strict iFrames
-        function copyToClipboard(text, successMsg) {
-            const tempInput = document.createElement('textarea');
-            tempInput.value = text;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            try {
-                document.execCommand('copy');
-                showToast(successMsg || "Copied to clipboard!");
-            } catch (err) {
-                showToast("Failed to copy", true);
-            }
-            document.body.removeChild(tempInput);
-        }
-
-        function copyCitation(text) {
-            copyToClipboard(text, "APA Citation copied to clipboard!");
-        }
-
-        // Modal Functions
-        function showBibtexModal(pubKey) {
-            const modal = document.getElementById('bibtex-modal');
-            const code = document.getElementById('bibtex-code');
-            code.value = bibtexEntries[pubKey] || "";
-            modal.classList.remove('hidden');
-        }
-
-        function closeBibtexModal() {
-            document.getElementById('bibtex-modal').classList.add('hidden');
-        }
-
-        function copyBibtexFromModal() {
-            const code = document.getElementById('bibtex-code').value;
-            copyToClipboard(code, "BibTeX entry copied!");
-            closeBibtexModal();
-        }
-
-        // Filter / Search across CV entries
-        function filterCV() {
-            const query = document.getElementById('cv-search').value.toLowerCase().trim();
-            const cards = document.querySelectorAll('.searchable-card');
-            const clearBtn = document.getElementById('clear-search-btn');
-
-            if (query.length > 0) {
-                clearBtn.classList.remove('hidden');
-            } else {
-                clearBtn.classList.add('hidden');
-            }
-
-            cards.forEach(card => {
-                const text = card.innerText.toLowerCase();
-                if (text.includes(query)) {
-                    card.style.display = "";
-                } else {
-                    card.style.display = "none";
-                }
-            });
-        }
-
-        function clearSearch() {
-            document.getElementById('cv-search').value = "";
-            filterCV();
-        }
-
-        // Interactive 1D Lattice Particle Simulation on Canvas
-        function initQuantumCanvas() {
-            const canvas = document.getElementById('quantum-canvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-
-            let width, height;
-            let particles = [];
-            const sites = 15;
-
-            function resize() {
-                width = canvas.width = canvas.offsetWidth;
-                height = canvas.height = canvas.offsetHeight;
-            }
-
-            window.addEventListener('resize', resize);
-            resize();
-
-            // Initialize quantum probability amplitude visual particles
-            for (let i = 0; i < 24; i++) {
-                particles.push({
-                    site: Math.floor(Math.random() * sites),
-                    targetSite: Math.floor(Math.random() * sites),
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    radius: Math.random() * 3 + 2,
-                    speed: Math.random() * 0.02 + 0.005,
-                    progress: Math.random(),
-                    alpha: Math.random() * 0.6 + 0.2
-                });
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-
-                const yMid = height / 2;
-                const spacing = width / (sites + 1);
-
-                // Draw synthetic 1D lattice line
-                ctx.beginPath();
-                ctx.strokeStyle = 'rgba(59, 130, 246, 0.2)';
-                ctx.lineWidth = 2;
-                ctx.moveTo(0, yMid);
-                ctx.lineTo(width, yMid);
-                ctx.stroke();
-
-                // Draw lattice site nodes
-                for (let i = 1; i <= sites; i++) {
-                    const nodeX = i * spacing;
-                    ctx.beginPath();
-                    ctx.fillStyle = 'rgba(147, 197, 253, 0.3)';
-                    ctx.arc(nodeX, yMid, 4, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-
-                // Animate quantum walk probability packets
-                particles.forEach(p => {
-                    p.progress += p.speed;
-                    if (p.progress >= 1) {
-                        p.progress = 0;
-                        p.site = p.targetSite;
-                        p.targetSite = (p.site + (Math.random() > 0.5 ? 1 : -1) + sites) % sites;
-                    }
-
-                    const startX = (p.site + 1) * spacing;
-                    const endX = (p.targetSite + 1) * spacing;
-                    const currentX = startX + (endX - startX) * p.progress;
-                    const currentY = yMid - Math.sin(p.progress * Math.PI) * 25;
-
-                    ctx.beginPath();
-                    ctx.fillStyle = `rgba(96, 165, 250, ${p.alpha})`;
-                    ctx.arc(currentX, currentY, p.radius, 0, Math.PI * 2);
-                    ctx.fill();
-
-                    // Connect lines to show coherence
-                    ctx.beginPath();
-                    ctx.strokeStyle = `rgba(139, 92, 246, ${p.alpha * 0.3})`;
-                    ctx.lineWidth = 1;
-                    ctx.moveTo(currentX, currentY);
-                    ctx.lineTo(currentX, yMid);
-                    ctx.stroke();
-                });
-
-                requestAnimationFrame(animate);
-            }
-
-            animate();
-        }
-
-        // Initialize on Load
-        window.addEventListener('DOMContentLoaded', () => {
-            initTheme();
-            initQuantumCanvas();
-        });
-    </script>
 </body>
 </html>
